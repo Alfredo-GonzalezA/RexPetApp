@@ -14,10 +14,10 @@
         android:text="Health Care"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.183"
+        app:layout_constraintHorizontal_bias="0.258"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.11" />
+        app:layout_constraintVertical_bias="0.265" />
 
     <TextView
         android:id="@+id/groomingtext"
@@ -26,10 +26,10 @@
         android:text="Grooming"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.736"
+        app:layout_constraintHorizontal_bias="0.733"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.109" />
+        app:layout_constraintVertical_bias="0.265" />
 
     <TextView
         android:id="@+id/dogwalkingtext"
@@ -38,10 +38,10 @@
         android:text="Dog Walking"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.186"
+        app:layout_constraintHorizontal_bias="0.249"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.408" />
+        app:layout_constraintVertical_bias="0.561" />
 
     <TextView
         android:id="@+id/petsittingtext"
@@ -50,10 +50,10 @@
         android:text="Pet Sitting"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.743"
+        app:layout_constraintHorizontal_bias="0.737"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.408" />
+        app:layout_constraintVertical_bias="0.561" />
 
     <TextView
         android:id="@+id/selectaservicetext"
@@ -62,56 +62,60 @@
         android:text="Select a service"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.198"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.022" />
+        app:layout_constraintVertical_bias="0.217" />
 
-    <ImageView
-        android:id="@+id/grooming_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageButton
+        android:id="@+id/healthcarebutton"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/whitebackgroundsquare"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.153"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.378"
+        app:srcCompat="@drawable/icons8_heart_with_dog_paw_100" />
+
+    <ImageButton
+        android:id="@+id/groomingbutton"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/whitebackgroundsquare"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.812"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.22"
+        app:layout_constraintVertical_bias="0.378"
         app:srcCompat="@drawable/icons8_grooming_64" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="141dp"
-        android:layout_height="129dp"
+    <ImageButton
+        android:id="@+id/dogwalkingbutton"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/whitebackgroundsquare"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.181"
+        app:layout_constraintHorizontal_bias="0.153"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.219"
-        app:srcCompat="@drawable/icons8_heart_with_dog_paw_100" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="144dp"
-        android:layout_height="143dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.183"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.595"
+        app:layout_constraintVertical_bias="0.743"
         app:srcCompat="@drawable/icons8_dog_walking_100" />
 
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="146dp"
-        android:layout_height="141dp"
+    <ImageButton
+        android:id="@+id/petsittingbutton"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/whitebackgroundsquare"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.867"
+        app:layout_constraintHorizontal_bias="0.812"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.593"
+        app:layout_constraintVertical_bias="0.743"
         app:srcCompat="@drawable/icons8_pets_90" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
