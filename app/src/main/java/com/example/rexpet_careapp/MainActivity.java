@@ -9,6 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class MainActivity extends AppCompatActivity {
     ImageButton switchToHealthCare;
     ImageButton switchToGrooming;
@@ -56,6 +59,15 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     //end button functions
+
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference myRef = database.getReference("message");
+
+
+
+    public void firebasedebug(View view){
+        myRef.setValue("Hello World ");
+    }
 
 
     private void switchToHealthCareActivity(){
