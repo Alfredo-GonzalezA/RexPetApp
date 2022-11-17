@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "1093951572459",
+    "firebase_url": "https://petapp-b99e8-default-rtdb.firebaseio.com",
+    "project_id": "petapp-b99e8",
+    "storage_bucket": "petapp-b99e8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1093951572459:android:56b7d455cf3d673ddf71ae",
+        "android_client_info": {
+          "package_name": "com.example.petcarev2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1093951572459-h49urc8gu5j56569vcf3c73hbbiqi7c5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBD1vqF5tGkDp2ntzWMuLhDE0GMMCh3Z6c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1093951572459-h49urc8gu5j56569vcf3c73hbbiqi7c5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1093951572459:android:a5c7edbd506d64d9df71ae",
+        "android_client_info": {
+          "package_name": "com.example.rexpet_careapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1093951572459-h49urc8gu5j56569vcf3c73hbbiqi7c5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBD1vqF5tGkDp2ntzWMuLhDE0GMMCh3Z6c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1093951572459-h49urc8gu5j56569vcf3c73hbbiqi7c5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
