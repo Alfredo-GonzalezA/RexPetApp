@@ -131,4 +131,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.956" />
 
+    <Spinner
+        android:id="@+id/mypetsspinnermain"
+        android:layout_width="247dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="80dp"
+        android:background="@drawable/backgroundwhitesearchbar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.092" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

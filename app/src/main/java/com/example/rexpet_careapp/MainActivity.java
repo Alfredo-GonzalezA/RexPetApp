@@ -6,11 +6,15 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
-
+import android.widget.Spinner;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     ImageButton switchToHealthCare;
@@ -23,6 +27,30 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+//----------------------------------------------------------------------------------
+        //this block is to add pets to the spinner(dropdown menu)
+        ArrayList<String> ownerpetarraylist = new ArrayList<>();
+        Spinner ownerpetspinner = (Spinner) findViewById(R.id.mypetsspinnermain);
+
+        ownerpetarraylist.add("My Pets");
+        ownerpetarraylist.add("Daisy");
+        ownerpetarraylist.add("Harold");
+        ArrayAdapter<String> ownerpetadaptor = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, ownerpetarraylist);
+        ownerpetadaptor.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ownerpetspinner.setAdapter(ownerpetadaptor);
+        ownerpetspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+//-------------------------------------------------------------------------------------
 
         switchToHealthCare = findViewById(R.id.healthcarebutton);
         switchToHealthCare.setOnClickListener(new View.OnClickListener() {
@@ -65,8 +93,12 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+
+
     public void firebasedebug(View view){
         myRef.setValue("Hello World ");
+
     }
 
 
