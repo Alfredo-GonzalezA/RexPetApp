@@ -15,6 +15,8 @@ public class Healthcare extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_healthcare);
     }
-
+    public void switchToMainActivity(View view){
+        startActivity(new Intent(this,MainActivity.class));
+    }
 
 }

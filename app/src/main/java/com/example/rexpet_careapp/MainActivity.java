@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         switchToPetSitting = findViewById(R.id.petsittingbutton);
-        switchToWalking.setOnClickListener(new View.OnClickListener() {
+        switchToPetSitting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 switchToPetSittingActivity();
