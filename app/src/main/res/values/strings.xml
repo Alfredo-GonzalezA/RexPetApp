@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Rex Pet-Care App</string>
+    <string name="title_activity_service_provider_info">ServiceProviderInfo</string>
+    <string name="title_home">Info</string>
+    <string name="title_dashboard">Reviews</string>
+    <string name="title_notifications">More</string>
 </resources>
