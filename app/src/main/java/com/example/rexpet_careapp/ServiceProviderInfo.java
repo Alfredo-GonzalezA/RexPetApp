@@ -1,6 +1,8 @@
 package com.example.rexpet_careapp;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -29,9 +31,13 @@ public class ServiceProviderInfo extends AppCompatActivity {
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications)
                 .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_service_provider_info);
+        NavController navController = Navigation.findNavController(this, R.id.serviceprovidernametext);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
+    }
+
+    public void switchToMainActivity(View view){
+        startActivity(new Intent(this,MainActivity.class));
     }
 
 }
