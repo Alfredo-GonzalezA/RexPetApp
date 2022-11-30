@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@drawable/mask_group_1">
+    android:background="@drawable/mask_group_1"
+    tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/healthcaretext"
@@ -133,13 +133,27 @@
 
     <Spinner
         android:id="@+id/mypetsspinnermain"
-        android:layout_width="247dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="80dp"
+        android:layout_width="208dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="28dp"
         android:background="@drawable/backgroundwhitesearchbar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.092" />
+        app:layout_constraintVertical_bias="0.076" />
+
+    <Button
+        android:id="@+id/addpetbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="28dp"
+        android:onClick="switchToAddPetActivity"
+        android:text="Add Pet"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.694"
+        app:layout_constraintStart_toEndOf="@+id/mypetsspinnermain"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.068" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
