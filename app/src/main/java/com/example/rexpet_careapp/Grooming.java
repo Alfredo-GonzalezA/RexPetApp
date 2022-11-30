@@ -50,6 +50,6 @@ public class Grooming extends AppCompatActivity {
     }
 
     public void continues(View view){
-        startActivity(new Intent(this,ServiceProviderInfo.class));
+        startActivity(new Intent(this,FindAndSelectServiceProvider.class));
     }
 }
