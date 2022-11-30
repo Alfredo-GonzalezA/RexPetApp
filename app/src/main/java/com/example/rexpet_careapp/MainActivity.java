@@ -2,7 +2,6 @@ package com.example.rexpet_careapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -21,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     ImageButton switchToGrooming;
     ImageButton switchToWalking;
     ImageButton switchToPetSitting;
+    Button switchToAddPet;
 
 
     @Override
@@ -85,7 +85,18 @@ public class MainActivity extends AppCompatActivity {
                 switchToPetSittingActivity();
             }
         });
+
+        switchToAddPet = (Button) findViewById(R.id.addpetbutton);
+        switchToAddPet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switchToAddPetActivity();
+            }
+        });
+
     }
+
+
     //end button functions
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -101,6 +112,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+    public void switchToAddPetActivity(){
+        startActivity(new Intent(this,AddPet.class));
+    }
 
     private void switchToHealthCareActivity(){
         Intent switchHealthCareIntent = new Intent(this,Healthcare.class);
@@ -123,4 +138,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public <T extends View> T findViewById(int id) {
+        return super.findViewById(id);
+    }
 }
