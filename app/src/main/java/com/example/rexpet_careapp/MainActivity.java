@@ -135,10 +135,13 @@ public class MainActivity extends AppCompatActivity {
         Intent switchPetSittingIntent = new Intent(this,PetSitting.class);
         startActivity(switchPetSittingIntent);
     }
+    public void switchToLogin(View view){
+        startActivity(new Intent(this,Login.class));}
 
 
     @Override
     public <T extends View> T findViewById(int id) {
         return super.findViewById(id);
     }
+
 }
