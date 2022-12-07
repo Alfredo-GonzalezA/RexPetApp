@@ -118,19 +118,6 @@
         app:layout_constraintVertical_bias="0.743"
         app:srcCompat="@drawable/icons8_pets_90" />
 
-    <Button
-        android:id="@+id/deletewhendonefirebasebuttontest"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="firebasedebug"
-        android:text="Data Base Debugger"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.466"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.956" />
-
     <Spinner
         android:id="@+id/mypetsspinnermain"
         android:layout_width="208dp"
