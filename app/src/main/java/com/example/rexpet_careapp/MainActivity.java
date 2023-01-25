@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     ImageButton switchToPetSitting;
     Button switchToAddPet;
     int changeWorked;
+    String testString;
 
 
     @Override
