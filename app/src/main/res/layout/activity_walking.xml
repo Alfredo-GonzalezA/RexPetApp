@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Walking"
-    android:background="@drawable/mask_group_1">
+    android:background="@drawable/darkgraybg">
 
     <Button
         android:id="@+id/walking_homebutton"
