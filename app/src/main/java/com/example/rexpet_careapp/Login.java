@@ -7,14 +7,23 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.auth.FirebaseAuth;
+
+
+
 public class Login extends AppCompatActivity {
 
     Button switchToLogin;
     Button switchToMain;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+
+
+
 
         switchToLogin = findViewById(R.id.signupbutton);
         switchToLogin.setOnClickListener(new View.OnClickListener(){
@@ -31,7 +40,9 @@ public class Login extends AppCompatActivity {
                 switchToMainActivity();
             }
         });
+
     }
+
     private void switchActivity(){
         Intent switchActivityIntent = new Intent(this, SignUp.class);
         startActivity(switchActivityIntent);
@@ -41,4 +52,5 @@ public class Login extends AppCompatActivity {
         Intent switchMainIntent = new Intent(this,MainActivity.class);
         startActivity(switchMainIntent);
     }
+
 }

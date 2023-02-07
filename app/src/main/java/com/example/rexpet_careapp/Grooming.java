@@ -3,6 +3,7 @@ package com.example.rexpet_careapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
+import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,19 +11,32 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CalendarView;
+import android.widget.DatePicker;
 import android.widget.Spinner;
 import android.widget.TimePicker;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Locale;
 
 public class Grooming extends AppCompatActivity {
     Button timeButton;
-    int hour, minute;
+    int hour, minute, year, month, day;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grooming);
+
+        //This block is to set the minimum and max of our calender
+        //We do not want users making an appointment for a date and time that has already happened
+        //We do not want users making an appointment for a time in future that is unlikely
+
+        CalendarView datePicker = (CalendarView) findViewById(R.id.calendarView);
+        datePicker.setMinDate(System.currentTimeMillis() - 1000);
+        datePicker.setMaxDate(System.currentTimeMillis() + (1000L *60*60*24*90));
+        //end block
 
         //this block of code is to add the spinner options for the types of grooming
         ArrayList<String> groomingarraylist = new ArrayList<>();
@@ -48,6 +62,7 @@ public class Grooming extends AppCompatActivity {
         });
         //end block of code for spinner
         timeButton = findViewById(R.id.time_picker_button);
+
     }
 
     public void switchToMainActivity(View view){
