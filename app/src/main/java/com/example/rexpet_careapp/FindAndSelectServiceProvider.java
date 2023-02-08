@@ -23,6 +23,6 @@ public class FindAndSelectServiceProvider extends AppCompatActivity {
     }
 
     public void gotopayment(View view){
-        startActivity(new Intent(this, Payment.class));
+        startActivity(new Intent(this, CheckoutActivity.class));
     }
 }
