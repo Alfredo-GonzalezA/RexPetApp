@@ -80,7 +80,10 @@ public class AddPet extends AppCompatActivity {
             petWeightView.setText("");
 
         }
-        Toast.makeText(this, "addPet called!", Toast.LENGTH_LONG).show();//debugging
+        Toast.makeText(this, "Pet added", Toast.LENGTH_LONG).show();//debugging
+
+            startActivity(new Intent(this,MainActivity.class));
+
     }
     public void switchToMainActivity(View view){
         startActivity(new Intent(this,MainActivity.class));

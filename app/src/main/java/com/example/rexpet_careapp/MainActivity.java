@@ -1,19 +1,28 @@
 package com.example.rexpet_careapp;
 
+import static android.content.ContentValues.TAG;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Spinner;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     ImageButton switchToHealthCare;
@@ -21,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
     ImageButton switchToWalking;
     ImageButton switchToPetSitting;
     Button switchToAddPet;
-    int changeWorked;
 
 
     @Override
@@ -29,27 +37,43 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//----------------------------------------------------------------------------------
-        //this block is to add pets to the spinner(dropdown menu)
-        ArrayList<String> ownerpetarraylist = new ArrayList<>();
-        Spinner ownerpetspinner = (Spinner) findViewById(R.id.mypetsspinnermain);
 
-        ownerpetarraylist.add("My Pets");
-        ownerpetarraylist.add("Daisy");
-        ArrayAdapter<String> ownerpetadaptor = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, ownerpetarraylist);
-        ownerpetadaptor.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        ownerpetspinner.setAdapter(ownerpetadaptor);
-        ownerpetspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        Spinner spinner = findViewById(R.id.mypetsspinnermain);
+        // Get a reference to the "Pets" node in the database
+        DatabaseReference petsRef = FirebaseDatabase.getInstance().getReference("Pets");
+
+// Add a ValueEventListener to retrieve the pet names
+        petsRef.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                List<String> petNames = new ArrayList<>();
 
+                // Iterate over the pets and add their names to the list
+                for (DataSnapshot petSnapshot : dataSnapshot.getChildren()) {
+                    String petName = petSnapshot.child("name").getValue(String.class);
+                    if (petName != null) {
+                        petNames.add(petName);
+                    }
+                }
+
+                // Do something with the list of pet names (e.g., populate a spinner)
+                ArrayAdapter<String> adapter = new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_spinner_item, petNames);
+                spinner.setAdapter(adapter);
             }
 
             @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
+            public void onCancelled(DatabaseError databaseError) {
+                Log.e(TAG, "Failed to read value.", databaseError.toException());
             }
         });
+
+
+// Add the listener to the database reference
+
+
+        //--------------------------------------------------------------------
+
+
 //-------------------------------------------------------------------------------------
 
         switchToHealthCare = findViewById(R.id.healthcarebutton);
