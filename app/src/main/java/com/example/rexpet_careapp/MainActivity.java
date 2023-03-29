@@ -169,4 +169,8 @@ public class MainActivity extends AppCompatActivity {
         return super.findViewById(id);
     }
 
+
+    public void switchToChatActivity(View view){
+        startActivity(new Intent(this,ChatActivity.class));
+    }
 }
