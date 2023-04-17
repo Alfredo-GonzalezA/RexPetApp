@@ -16,6 +16,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -29,13 +31,19 @@ public class AddPet extends AppCompatActivity {
     EditText petAgeView;
     EditText petWeightView;
 
+
+
     DatabaseReference databasePets;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_pet);
 
-        databasePets = FirebaseDatabase.getInstance().getReference("Pets");
+        //databasePets = FirebaseDatabase.getInstance().getReference("users");
+        databasePets = FirebaseUtils.getDatabase();
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        String uid = auth.getCurrentUser().getUid();
+
 
         addPetButton = (Button) findViewById(R.id.addServiceProviderButton);
         petNameView = (EditText) findViewById(R.id.addServiceProviderNameField);
@@ -58,7 +66,7 @@ public class AddPet extends AppCompatActivity {
         });
     }
 
-    private void addPet(){
+    private void addPet() {
         String name = petNameView.getText().toString().trim();
         String breed = petBreedView.getText().toString().trim();
         double age = parseDouble(petAgeView.getText().toString().trim());
@@ -68,23 +76,28 @@ public class AddPet extends AppCompatActivity {
         String gender = (String) selectedButton.getText();
 
         //!!!! need to find way to actually validate input !!!!
-        if((!TextUtils.isEmpty(name)) && !TextUtils.isEmpty(breed)){
-            String id = databasePets.push().getKey();
+        if ((!TextUtils.isEmpty(name)) && !TextUtils.isEmpty(breed)) {
+            String key = FirebaseUtils.generateKey();
+            FirebaseAuth auth = FirebaseAuth.getInstance();
+            String uid = auth.getCurrentUser().getUid();
+
             //NEED TO FIND WAY TO GET USER'S ID BASED ON SIGN IN
-            Pet pet = new Pet(id, "user1", name, breed, gender, age, weight);
-            databasePets.child(id).setValue(pet);
+            Pet pet = new Pet(key, uid, name, breed, gender, age, weight);
+            String petId = databasePets.child("pets").push().getKey();
+            databasePets.child(uid).child("pets").child(petId).setValue(pet);
+
+            // Add the pet ID to the user's "pets" child node
+
             petNameView.setText("");
             petBreedView.setText("");
             genderSelector.clearCheck();
             petAgeView.setText("");
             petWeightView.setText("");
-
         }
         Toast.makeText(this, "Pet added", Toast.LENGTH_LONG).show();//debugging
-
-            startActivity(new Intent(this,MainActivity.class));
-
+        startActivity(new Intent(this, MainActivity.class));
     }
+
     public void switchToMainActivity(View view){
         startActivity(new Intent(this,MainActivity.class));
     }

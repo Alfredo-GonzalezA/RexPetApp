@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -30,7 +31,8 @@ public class MainActivity extends AppCompatActivity {
     ImageButton switchToWalking;
     ImageButton switchToPetSitting;
     Button switchToAddPet;
-
+    FirebaseAuth auth = FirebaseAuth.getInstance();
+    String uid = auth.getCurrentUser().getUid();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +42,8 @@ public class MainActivity extends AppCompatActivity {
 
         Spinner spinner = findViewById(R.id.mypetsspinnermain);
         // Get a reference to the "Pets" node in the database
-        DatabaseReference petsRef = FirebaseDatabase.getInstance().getReference("Pets");
+        DatabaseReference petsRef = FirebaseUtils.getDatabase().child(uid).child("pets");
+
 
 // Add a ValueEventListener to retrieve the pet names
         petsRef.addValueEventListener(new ValueEventListener() {
@@ -163,6 +166,11 @@ public class MainActivity extends AppCompatActivity {
     public void switchToLogin(View view){
         startActivity(new Intent(this,Login.class));}
 
+
+    public void signout(View view){
+        auth.signOut();
+        startActivity(new Intent(this,ChatActivity.class));
+    }
 
     @Override
     public <T extends View> T findViewById(int id) {

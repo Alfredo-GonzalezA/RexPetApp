@@ -16,13 +16,20 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.AuthResult;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+
 
 public class RegistrationActivity extends AppCompatActivity {
 
-    private EditText emailTextView, passwordTextView;
+    private EditText emailTextView, passwordTextView,firstname,lastname;
     private Button Btn;
     private ProgressBar progressbar;
     private FirebaseAuth mAuth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -34,6 +41,8 @@ public class RegistrationActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
         // initialising all views through id defined above
+        firstname = findViewById(R.id.firstname);
+        lastname = findViewById(R.id.lastname);
         emailTextView = findViewById(R.id.email);
         passwordTextView = findViewById(R.id.passwd);
         Btn = findViewById(R.id.btnregister);
@@ -49,8 +58,7 @@ public class RegistrationActivity extends AppCompatActivity {
         });
     }
 
-    private void registerNewUser()
-    {
+    private void registerNewUser() {
 
         // show the visibility of progress bar to show loading
         progressbar.setVisibility(View.VISIBLE);
@@ -59,6 +67,10 @@ public class RegistrationActivity extends AppCompatActivity {
         String email, password;
         email = emailTextView.getText().toString();
         password = passwordTextView.getText().toString();
+
+        // Get the values for first name and last name EditText fields
+        String firstNameValue = firstname.getText().toString();
+        String lastNameValue = lastname.getText().toString();
 
         // Validations for input email and password
         if (TextUtils.isEmpty(email)) {
@@ -90,8 +102,18 @@ public class RegistrationActivity extends AppCompatActivity {
                                             Toast.LENGTH_LONG)
                                     .show();
 
+                            // Update the user profile
+                            //database = FirebaseDatabase.getInstance().getReference("users");
+                            DatabaseReference database = FirebaseUtils.getDatabase();
+                            FirebaseAuth auth = FirebaseAuth.getInstance();
+                            String uid = auth.getCurrentUser().getUid();
+                            String key = FirebaseUtils.generateKey();
+                            database.child(uid).child("firstName").setValue(firstNameValue);
+                            database.child(uid).child("lastName").setValue(lastNameValue);
+                            database.child(uid).child("email").setValue(email);
+
                             // hide the progress bar
-                            //progressBar.setVisibility(View.GONE);
+                            progressbar.setVisibility(View.GONE);
 
                             // if the user created intent to login activity
                             Intent intent
@@ -110,7 +132,7 @@ public class RegistrationActivity extends AppCompatActivity {
                                     .show();
 
                             // hide the progress bar
-                            //progressBar.setVisibility(View.GONE);
+                            progressbar.setVisibility(View.GONE);
                         }
                     }
                 });
