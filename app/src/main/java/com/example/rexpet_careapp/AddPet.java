@@ -41,8 +41,8 @@ public class AddPet extends AppCompatActivity {
 
         //databasePets = FirebaseDatabase.getInstance().getReference("users");
         databasePets = FirebaseUtils.getDatabase();
-        FirebaseAuth auth = FirebaseAuth.getInstance();
-        String uid = auth.getCurrentUser().getUid();
+        FirebaseAuth mauth = FirebaseAuth.getInstance();
+        String uid = mauth.getCurrentUser().getUid();
 
 
         addPetButton = (Button) findViewById(R.id.addServiceProviderButton);

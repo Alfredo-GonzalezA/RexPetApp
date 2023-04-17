@@ -31,8 +31,8 @@ public class MainActivity extends AppCompatActivity {
     ImageButton switchToWalking;
     ImageButton switchToPetSitting;
     Button switchToAddPet;
-    FirebaseAuth auth = FirebaseAuth.getInstance();
-    String uid = auth.getCurrentUser().getUid();
+    FirebaseAuth mauth = FirebaseAuth.getInstance();
+    String uid = mauth.getCurrentUser().getUid();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -164,12 +164,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(switchPetSittingIntent);
     }
     public void switchToLogin(View view){
-        startActivity(new Intent(this,Login.class));}
+        startActivity(new Intent(this,LoginActivity.class));}
 
 
     public void signout(View view){
-        auth.signOut();
-        startActivity(new Intent(this,ChatActivity.class));
+        mauth.signOut();
+        startActivity(new Intent(this,LoginActivity.class));
     }
 
     @Override
