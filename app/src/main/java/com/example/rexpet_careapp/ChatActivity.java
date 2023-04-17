@@ -80,4 +80,8 @@ public class ChatActivity extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError databaseError) {}
         });
     }
+    public void switchToMainActivity(View v){
+        Intent switchMainIntent = new Intent(this,MainActivity.class);
+        startActivity(switchMainIntent);
+    }
 }
