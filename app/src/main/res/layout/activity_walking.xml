@@ -20,8 +20,42 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.937" />
 
+    <Button
+        android:id="@+id/w_start_time"
+        android:layout_width="170dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="28dp"
+        android:onClick="popupStartTimeClicker"
+        android:text="Start Time"
+        app:layout_constraintBottom_toTopOf="@+id/w_calendarView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.52" />
+
+    <Button
+        android:id="@+id/w_end_time"
+        android:layout_width="170dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="32dp"
+        android:text="End Time"
+        android:onClick="popupEndTimeClicker"
+        app:layout_constraintBottom_toTopOf="@+id/w_calendarView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.52" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="w_switchToSetLocation"
+        android:text="Next"
+        app:layout_constraintBottom_toTopOf="@+id/walking_homebutton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/w_calendarView" />
+
     <CalendarView
-        android:id="@+id/calendarView2"
+        android:id="@+id/w_calendarView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/white"

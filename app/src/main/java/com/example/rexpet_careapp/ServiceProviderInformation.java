@@ -1,6 +1,9 @@
 package com.example.rexpet_careapp;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
@@ -33,6 +36,12 @@ private ActivityServiceProviderInformationBinding binding;
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
     }
-
+    public void switchToMainActivity(View v){
+        Intent switchMainIntent = new Intent(this,MainActivity.class);
+        startActivity(switchMainIntent);
+    }
+    public void continues(View view){
+        startActivity(new Intent(this,FindAndSelectServiceProvider.class));
+    }
 
 }

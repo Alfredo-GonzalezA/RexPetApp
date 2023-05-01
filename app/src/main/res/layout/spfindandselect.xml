@@ -1,0 +1,220 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cardview_dark_background">
+
+    <LinearLayout
+        android:id="@+id/linearlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ListView
+            android:id="@+id/list_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <!-- First service provider -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/provider_image1"
+                android:layout_width="150dp"
+                android:layout_height="180dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/randomdudewilldelete"/>
+
+            <TextView
+                android:id="@+id/provider_name1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_toRightOf="@id/provider_image1"
+                android:text="John Smith"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/provider_distance1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/provider_name1"
+                android:layout_marginStart="16dp"
+                android:layout_toRightOf="@id/provider_image1"
+                android:layout_marginTop="8dp"
+                android:text="1.2 miles away"
+                android:textSize="16sp"/>
+
+            <RatingBar
+                android:id="@+id/provider_rating1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/provider_distance1"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_toRightOf="@id/provider_image1"
+                android:isIndicator="true"
+                android:numStars="5"
+                android:rating="4.5"
+                android:stepSize="0.1"/>
+
+            <TextView
+                android:id="@+id/provider_price1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/provider_rating1"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_toRightOf="@id/provider_image1"
+                android:text="$15 - $30 per hour"
+                android:textColor="#008000"
+                android:textSize="16sp"/>
+
+        </RelativeLayout>
+
+        <!-- Second service provider -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/provider_image2"
+                android:layout_width="150dp"
+                android:layout_height="180dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/sean"/>
+
+            <TextView
+                android:id="@+id/provider_name2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sean Smith"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_toRightOf="@id/provider_image2"
+                android:layout_marginStart="16dp"/>
+
+            <TextView
+                android:id="@+id/provider_distance2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1.2 miles away"
+                android:textSize="16sp"
+                android:layout_toRightOf="@id/provider_image2"
+                android:layout_below="@id/provider_name2"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="16dp"/>
+
+            <RatingBar
+                android:id="@+id/provider_rating2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:rating="4.5"
+                android:numStars="5"
+                android:stepSize="0.1"
+                android:isIndicator="true"
+                android:layout_toRightOf="@id/provider_image2"
+                android:layout_below="@id/provider_distance2"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="16dp"/>
+
+            <TextView
+                android:id="@+id/provider_price2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$15 - $30 per hour"
+                android:textSize="16sp"
+                android:textColor="#008000"
+                android:layout_toRightOf="@id/provider_image2"
+                android:layout_below="@id/provider_rating2"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="16dp"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/provider_image3"
+                android:layout_width="150dp"
+                android:layout_height="180dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/random2"/>
+
+            <TextView
+                android:id="@+id/provider_name3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bill Gates"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_toRightOf="@id/provider_image3"
+                android:layout_marginStart="16dp"/>
+
+            <TextView
+                android:id="@+id/provider_distance3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2.2 miles away"
+                android:textSize="16sp"
+                android:layout_toRightOf="@id/provider_image3"
+                android:layout_below="@id/provider_name3"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="16dp"/>
+
+            <RatingBar
+                android:id="@+id/provider_rating3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:rating="3"
+                android:numStars="5"
+                android:stepSize="0.1"
+                android:isIndicator="true"
+                android:layout_toRightOf="@id/provider_image3"
+                android:layout_below="@id/provider_distance3"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="16dp"/>
+
+
+
+            <TextView
+                android:id="@+id/provider_price3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$15 - $30 per hour"
+                android:textSize="16sp"
+                android:textColor="#008000"
+                android:layout_toRightOf="@id/provider_image3"
+                android:layout_below="@id/provider_rating3"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="16dp"/>
+
+        </RelativeLayout>
+        <Button
+            android:id="@+id/my_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:onClick="switchToMainActivity"
+            android:text="Home" />
+
+        <Button
+            android:id="@+id/my_button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:onClick="addnewsp"
+            android:text="Add SP" />
+    </LinearLayout>
+
+</ScrollView>
+

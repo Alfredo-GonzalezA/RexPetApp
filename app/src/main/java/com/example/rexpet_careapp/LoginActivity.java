@@ -52,6 +52,11 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(switchActivityIntent);
     }
 
+    public void switchtospsu(View v){
+        Intent switchActivityIntent = new Intent(this, sp_signup.class);
+        startActivity(switchActivityIntent);
+    }
+
     private void loginUserAccount()
     {
 

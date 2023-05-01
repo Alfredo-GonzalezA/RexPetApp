@@ -181,4 +181,8 @@ public class MainActivity extends AppCompatActivity {
     public void switchToChatActivity(View view){
         startActivity(new Intent(this,ChatActivity.class));
     }
+
+    public void switchToAppointments(View view){
+        startActivity(new Intent(this,userappointments.class));
+    }
 }
