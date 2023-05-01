@@ -1,18 +1,82 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.dashboard.DashboardFragment">
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <TextView
-        android:id="@+id/textView19"
+        android:id="@+id/review_author"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="John D." />
+
+    <RatingBar
+        android:id="@+id/review_rating"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="328dp"
-        android:text="Reviews Section"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:numStars="5"
+        android:rating="5" />
+
+    <TextView
+        android:id="@+id/review_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Best Service Ever!" />
+
+    <TextView
+        android:id="@+id/review_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="May 1, 2023" />
+
+
+    <TextView
+        android:id="@+id/review_author2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="William Garcia." />
+
+    <RatingBar
+        android:id="@+id/review_rating2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:rating="2" />
+
+    <TextView
+        android:id="@+id/review_content2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Too expensive :/." />
+
+    <TextView
+        android:id="@+id/review_date2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="May 1, 2023" />
+
+    <TextView
+        android:id="@+id/review_author3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Anthony Suarez" />
+
+    <RatingBar
+        android:id="@+id/review_rating3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:rating="2" />
+
+    <TextView
+        android:id="@+id/review_content3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cool but there are better options for cheaper." />
+
+    <TextView
+        android:id="@+id/review_date3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="May 1, 2023" />
+
+</LinearLayout>

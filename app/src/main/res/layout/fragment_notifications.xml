@@ -1,19 +1,81 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+<LinearLayout android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.notifications.NotificationsFragment">
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <TextView
-        android:id="@+id/textView22"
-        android:layout_width="wrap_content"
+        android:id="@+id/services_title"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="324dp"
-        android:text="More Section"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:text="Additional Info"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:padding="16dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/service1_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Availiability"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:padding="16dp" />
+
+            <TextView
+                android:id="@+id/service1_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Available M-F From 10am - 5pm."
+                android:padding="16dp" />
+
+            <TextView
+                android:id="@+id/service2_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Contact Info"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:padding="16dp" />
+
+            <TextView
+                android:id="@+id/service2_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Email: laneservices@gmail.com\nPhone:(818)242-5791"
+                android:padding="16dp" />
+
+            <!-- Repeat the above pattern for each available service -->
+
+            <TextView
+                android:id="@+id/service3_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Location"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:padding="16dp" />
+
+            <TextView
+                android:id="@+id/service3_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="13000 Oxnard St, Van Nuys, CA 91401"
+                android:padding="16dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+</LinearLayout>
