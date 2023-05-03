@@ -9,5 +9,5 @@ public final class BuildConfig {
   public static final String BUILD_TYPE = "debug";
   public static final int VERSION_CODE = 1;
   public static final String VERSION_NAME = "1.0";
-  public static final String MAPS_API_KEY = "AIzaSyAU93Qt3GSpsuvK61Hn7-jnBDAA5MfMAmo";
+  public static final String MAPS_API_KEY = "AIzaSyDy1fqJKQzZHD0tBA6vrGky3vcWBriG4JA";
 }
