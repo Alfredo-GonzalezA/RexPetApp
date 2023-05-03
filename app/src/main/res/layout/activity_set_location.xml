@@ -16,7 +16,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintVertical_bias="0.239" />
 
     <TextView
         android:id="@+id/text_location"
@@ -24,6 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:text="Current Location"
+        android:gravity="center"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,7 +35,7 @@
         android:id="@+id/button_location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="48dp"
         android:text="Get Location"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -45,13 +46,26 @@
         android:id="@+id/ps_serviceproviderselectionbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="56dp"
         android:onClick="findService"
         android:text="Continue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_location" />
+
+    <Button
+        android:id="@+id/btnSearchAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search Address"
+        android:onClick="searchAddress"
+        app:layout_constraintBottom_toTopOf="@+id/ps_serviceproviderselectionbutton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_location"
+        app:layout_constraintVertical_bias="0.16" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

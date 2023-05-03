@@ -99,4 +99,8 @@ public class SetLocation extends AppCompatActivity implements LocationListener {
     public void findService(View view){
         startActivity(new Intent(this,FindAndSelectServiceProvider.class));
     }
+
+    public void searchAddress(View view){
+        startActivity(new Intent(this,SearchAddress.class));
+    }
 }
